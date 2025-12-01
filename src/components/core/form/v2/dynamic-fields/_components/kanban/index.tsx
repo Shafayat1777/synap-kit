@@ -1,11 +1,11 @@
 import React from 'react';
 
+import type { DynamicFieldsProps } from '@/types';
+
 import CoreForm from '@/components/core/form/v2';
 import { Skeleton } from '@/components/ui/skeleton';
 
 import { cn } from '@/lib/utils';
-
-import type { DynamicFieldsProps } from '../../types';
 
 const KanbanDynamicFields: React.FC<
   Omit<DynamicFieldsProps, 'title' | 'viewAs' | 'extraButtons' | 'handleAdd'>
@@ -62,10 +62,38 @@ const KanbanDynamicFields: React.FC<
 
                     {fieldDef.type === 'image' && (
                       <CoreForm.FileUpload
+                        label={fieldDef.type}
                         control={form.control}
                         name={name}
                         isUpdate={fieldDef.isUpdate}
                         disabled={fieldDef.disabled as boolean}
+                        fileType={'image'}
+                        disableLabel={fieldDef.disableLabel}
+                        info={fieldDef.info}
+                        render={fieldDef.render}
+                        optional={fieldDef.optional}
+                        small={fieldDef.small}
+                        description={fieldDef.description}
+                        placeholder={fieldDef.placeholder}
+                        options={fieldDef.options}
+                      />
+                    )}
+                    {fieldDef.type === 'file' && (
+                      <CoreForm.FileUpload
+                        label={fieldDef.type}
+                        control={form.control}
+                        name={name}
+                        isUpdate={fieldDef.isUpdate}
+                        disabled={fieldDef.disabled as boolean}
+                        fileType={'document'}
+                        disableLabel={fieldDef.disableLabel}
+                        info={fieldDef.info}
+                        render={fieldDef.render}
+                        optional={fieldDef.optional}
+                        small={fieldDef.small}
+                        description={fieldDef.description}
+                        placeholder={fieldDef.placeholder}
+                        options={fieldDef.options}
                       />
                     )}
 

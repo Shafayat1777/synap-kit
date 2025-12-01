@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import CoreForm from '@/components/core/form/v2';
+import type { DynamicFieldsProps } from '@/types';
 
-import type { DynamicFieldsProps } from '../types';
+import CoreForm from '@/components/core/form/v2';
 
 const RenderCell: React.FC<
   Pick<DynamicFieldsProps, 'fieldName' | 'startIndex' | 'form'> & {

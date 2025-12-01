@@ -14,6 +14,8 @@ import type ReactQuill from 'react-quill-new';
 import { type Props as ReactSelectProps } from 'react-select';
 import type { Mask, Options } from 'use-mask-input';
 
+import type { MultiSelectOption } from '@/components/ui/multi-select';
+
 import type {
   IFormSelectOption,
   IFormSelectOptionGroup,
@@ -118,6 +120,13 @@ export type FormGender = FormControlFunc<{
 
 export type FormMultiSelect = FormControlFunc<{
   options: IFormSelectOption[];
+  onChange?: (
+    options: string[],
+    field: ControllerRenderProps<any, any>,
+    removedOptions?: string[]
+  ) => void;
+  defaultValue?: string[];
+  isLoading?: boolean;
 }>;
 
 export type FormReactSelect = FormControlFunc<{

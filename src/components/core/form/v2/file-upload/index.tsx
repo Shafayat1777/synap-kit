@@ -19,6 +19,8 @@ import {
   VideoPreview,
 } from './_previews';
 
+export type FormFileProps = React.ComponentProps<typeof FormFileUpload>;
+
 const FormFileUpload: FormFileUpload = ({
   disabled,
   options,

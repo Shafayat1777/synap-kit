@@ -6,6 +6,8 @@ import type { LucideIcon } from 'lucide-react';
 import type { FieldArrayWithId, UseFormReturn } from 'react-hook-form';
 import type { RouteObject } from 'react-router';
 
+import type { FormFileProps } from '@/components/core/form/v2/file-upload';
+
 export type IToast = {
   status: number;
   type:
@@ -237,17 +239,14 @@ type FieldText = {
   type: 'text';
   // inputType?: 'text' | 'number';
   placeholder?: string;
-  disabled?: boolean;
 };
 type FieldTextArea = {
   type: 'textarea';
   placeholder?: string;
-  disabled?: boolean;
 };
 type FieldNumber = {
   type: 'number';
   placeholder?: string;
-  disabled?: boolean;
 };
 type FieldCheckBox = {
   type: 'checkBox';
@@ -258,7 +257,7 @@ type FieldSelect = {
   options: IFormSelectOption[];
   excludeOptions?: string[];
   unique?: boolean;
-  disabled?: boolean;
+
   onChange?: (option?: any, field?: any) => void;
 };
 
@@ -266,42 +265,39 @@ type FieldRadio = {
   type: 'radio';
   placeholder?: string;
   options: IFormSelectOption[];
-  disabled?: boolean;
+
   onChange?: (option?: any, field?: any) => void;
 };
 type FieldJoinInputUnit = {
   type: 'join-input-unit';
   placeholder?: string;
   unit: (index: number) => string;
-  disabled?: boolean;
+
   inputType?: string;
 };
 
-type FieldImage = {
+interface FieldImage extends FormFileProps {
   type: 'image';
   placeholder?: string;
   isUpdate?: boolean;
-  baseUrl: string;
-};
-type FieldFile = {
+}
+
+interface FieldFile extends FormFileProps {
   type: 'file';
   placeholder?: string;
   isUpdate?: boolean;
-  baseUrl: string;
-};
+}
 
 type FieldCheckbox = {
   type: 'checkbox';
   placeholder?: string;
   isUpdate?: boolean;
-  disabled?: boolean;
 };
 
 type FieldDate = {
   type: 'date';
   placeholder?: string;
   isUpdate?: boolean;
-  disabled?: boolean;
 };
 
 type FieldMultiSelect = {
@@ -358,6 +354,7 @@ export interface DynamicFieldsProps {
   children?: React.ReactNode;
   startIndex?: number;
   extraButton?: React.ReactNode;
+  searchKeys?: string[];
 }
 
 export interface ITableActionRegular<TData> {

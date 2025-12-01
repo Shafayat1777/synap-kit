@@ -1,13 +1,12 @@
 import React from 'react';
 
+import type { DynamicFieldsProps } from '@/types';
 import { Plus } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import SectionHeader from '@/components/ui/section-header';
 
 import { cn } from '@/lib/utils';
-
-import type { DynamicFieldsProps } from '../types';
 
 interface IProps
   extends Pick<

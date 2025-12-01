@@ -25,7 +25,7 @@ const RichTextModal: React.FC<IRichTextModalProps> = ({
   return (
     <Dialog>
       <DialogTrigger>
-        <Button size={'sm'} variant={'gradient'}>
+        <Button size={'sm'} variant={'outline'}>
           View <Eye className='size-4' />
         </Button>
       </DialogTrigger>

@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react';
 
 import { TableProvider } from '@/providers';
+import type { DynamicFieldsProps } from '@/types';
 import type { ColumnDef } from '@tanstack/react-table';
 
-import type { DynamicFieldsProps } from '../types';
 import RenderCell from './render-cell';
 
 const TableDynamicFields: React.FC<

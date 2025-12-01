@@ -1,9 +1,10 @@
+import type { DynamicFieldsProps } from '@/types';
+
 import DynamicFieldContainer from './_components/container';
 import DefaultDynamicFields from './_components/default';
 import KanbanDynamicFields from './_components/kanban';
 import SpreadsheetDynamicFields from './_components/spreadsheet';
 import TableDynamicFields from './_components/table';
-import type { DynamicFieldsProps } from './types';
 
 const FormDynamicFields = (props: DynamicFieldsProps) => {
   return (

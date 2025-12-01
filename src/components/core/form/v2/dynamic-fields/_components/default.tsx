@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+
+import type { DynamicFieldsProps } from '@/types';
 
 import { Skeleton } from '@/components/ui/skeleton';
 import {
@@ -12,7 +14,6 @@ import {
 
 import { cn } from '@/lib/utils';
 
-import type { DynamicFieldsProps } from '../types';
 import RenderCell from './render-cell';
 
 const DefaultDynamicFields: React.FC<

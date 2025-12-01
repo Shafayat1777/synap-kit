@@ -1,7 +1,7 @@
+import type { DynamicFieldsProps } from '@/types';
 import { HotColumn, HotTable } from '@handsontable/react';
 import { registerAllModules } from 'handsontable/registry';
 
-import type { DynamicFieldsProps } from '../../types';
 import CustomEditor from './custom-editor';
 import CustomRenderer from './custom-renderer';
 
